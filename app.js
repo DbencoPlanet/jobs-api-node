@@ -60,7 +60,7 @@ app.get('/', (req, res) => {
     '<h1>Jobs API is running...</h1><a href="api-docs">Documentation</a>'
   );
 });
-app.use('api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // routes
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/jobs', authenticateUser, jobsRouter);
